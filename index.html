@@ -189,6 +189,49 @@
             text-align: center;
         }
     </style>
+    <style>
+        .button019 a {
+            background: #eee;
+            border-radius: 3px;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 280px;
+            padding: 10px 25px;
+            color: #313131;
+            transition: 0.3s ease-in-out;
+            font-weight: 500;
+        }
+
+            .button019 a:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                bottom: 0;
+                right: 2rem;
+                font-size: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s;
+                width: 6px;
+                height: 6px;
+                border-top: solid 2px currentColor;
+                border-right: solid 2px currentColor;
+                transform: translateY(-50%) rotate(45deg);
+            }
+
+            .button019 a:hover {
+                background: #6bb6ff;
+                color: #FFF;
+            }
+
+                .button019 a:hover:after {
+                    right: 1.4rem;
+                }
+    </style>
 </head>
 <body>
     <div class="pagetop">
@@ -198,8 +241,14 @@
     </div>
     <h1>kazuta.b photo album</h1>
     <p>kazuta.b:写真が好きな中学2年生。主にFUJIFILM x100fで撮影した写真を投稿します。</p>
-    <div class="instagram"><a href="https://www.instagram.com/kazuta.b3/">instagramはこちらから</a></div>
-    <div class="photohito"><a href="https://photohito.com/user/162414/">photohitoはこちらから</a></div>
+    <div class="button019">
+        <a href="https://www.instagram.com/kazuta.b3/">instagramはこちらから</a>
+    </div>
+    <br />
+    <div class="button019">
+        <a href="https://photohito.com/user/profile/162414/">photohitoはこちらから</a>
+    </div>
+    <br />
     <header class="fix-01">kazuta.b photo album</header>
     <img src="https://photohito.k-img.com/uploads/photo163/user162414/6/7/67a7ee694a96467b3ec258d6fa15cf46/67a7ee694a96467b3ec258d6fa15cf46_l.jpg" style="display:block;margin:auto;">
     <p>カメラのフラッシュをたいて撮った写真です。宮ケ瀬ダム湖畔園地で撮影しました。FUJIFILM x100f</p>
