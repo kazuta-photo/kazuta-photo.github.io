@@ -1,0 +1,1 @@
+# kazuta-photo.github.io
