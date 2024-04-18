@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -237,6 +238,44 @@
             font-family: 游ゴシック;
         }
     </style>
+    <style>
+        /** 1. 一般的なヘッダー */
+.header1 {
+ /* divを横並びにして、.header-logoと.header-menuを等間隔に左右に配置*/
+ display: flex;
+ justify-content: space-between;
+
+ background: #f3f0ea;
+ padding: 20px;
+ color: #707070;
+}
+
+.header1 .header-menu a {
+ text-decoration: none;
+ color: #707070;
+ padding: 20px;
+}
+.header1 .header-menu a:hover {
+ border-bottom: 2px solid #00f7ff;
+ padding-bottom: 10px;
+}
+.header1 .header-menu a:hover,
+.header1 .header-menu a.active {
+ border-bottom: 2px solid #00f7ff;
+ padding-bottom: 10px;
+}
+.header-logo {
+    font-size: 80px;
+}
+.header-menu {
+    font-size: 20px;
+}
+.img2 img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+    </style>
 </head>
 <body>
     <div class="pagetop">
@@ -244,21 +283,21 @@
             <span class="pagetop__text">TOP</span>
         </a>
     </div>
+    <div class="header1">
+        <div class="header-logo">Kazuta.b Photo Album</div>
+        <div class="header-menu">
+          <a href="#" class="active">TOP</a>
+          <a href="#">About</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+       <div class="img2"><img src="https://photohito.k-img.com/uploads/photo163/user162414/f/2/f28e542c7f8f177e1100c14268be76f4/f28e542c7f8f177e1100c14268be76f4_l.jpg" style="display:block;margin:auto;" />
+       </div>
+     
     <br />
-    <h1>kazuta.b photo album</h1>
-    <p>kazuta.b:写真が好きな中学2年生。主にFUJIFILM x100fで撮影した写真を投稿します。</p>
-    <ul>
-        <li><a href="gallery.html">ギャラリー</a></li>
-    </ul>
-    <div class="button019">
-        <a href="https://www.instagram.com/kazuta.b3/">instagramはこちらから</a>
-    </div>
     <br />
-    <div class="button019">
-        <a href="https://photohito.com/user/profile/162414/">photohitoはこちらから</a>
-    </div>
-    <br />
-    <header class="fix-01">kazuta.b photo album</header>
     <img src="https://photohito.k-img.com/uploads/photo163/user162414/6/7/67a7ee694a96467b3ec258d6fa15cf46/67a7ee694a96467b3ec258d6fa15cf46_l.jpg" style="display:block;margin:auto;">
     <p>カメラのフラッシュをたいて撮った写真です。宮ケ瀬ダム湖畔園地で撮影しました。FUJIFILM x100f</p>
     <br />
