@@ -1,1 +1,364 @@
 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>kazuta.b photo album</title>
+   <style>
+       html {
+           scroll-behavior: smooth;
+       }
+
+       body {
+           margin: 0;
+       }
+
+       .sec-blue {
+           background-color: rgb(0, 140, 255, .5);
+           height: 800px;
+       }
+
+       .sec-yellow {
+           background-color: rgba(244, 244, 11);
+           height: 800px;
+       }
+
+       .sec-green {
+           background-color: rgb(129, 243, 129, .5);
+           height: 800px;
+       }
+
+       /* トップへ戻るボタン */
+       .pagetop {
+           width: 64px;
+           height: 64px;
+           position: fixed;
+           bottom: 8%;
+           right: 2%;
+           transition: all .3s;
+       }
+
+       .pagetop__link {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 100%;
+           height: 100%;
+           background-color: #ffffff;
+           border-radius: 50%;
+           text-align: center;
+           font-size: 18px;
+           font-size: bold;
+           line-height: 1.3;
+           color: #333;
+           text-decoration: none;
+       }
+
+       .pagetop__text {
+           padding-top: 15px;
+           position: relative;
+       }
+
+           .pagetop__text::before {
+               content: "〈";
+               display: inline-block;
+               position: absolute;
+               top: -13px;
+               left: 50%;
+               transform: translateX(-50%) rotate(90deg);
+           }
+
+           .pagetop__text::after {
+               content: "〈";
+               display: inline-block;
+               position: absolute;
+               top: -7px;
+               left: 50%;
+               transform: translateX(-50%) rotate(90deg);
+           }
+
+       /* TOPボタン出現後のスタイル */
+       .pagetop.fadeIn {
+           opacity: 1;
+           visibility: inherit;
+       }
+   </style>
+    <script>
+        'use strict';
+
+        {
+            // データ取得
+            // DOM取得
+            // pagetopボタン
+            const pageTop = document.querySelector('.pagetop');
+            // トップへ戻るボタンを表示する位置のsection
+            const secGreen = document.querySelector('.sec-green');
+            // ビューポートの高さ
+            const vh = window.innerHeight;
+            // リセット用変数
+            let time = null;
+            // タイマーの秒数
+            const speed = 200;
+
+            // 処理
+            // イベントで実行する処理
+            function pageTopAction() {
+                // スクロールイベントを間引く
+                clearTimeout(time);
+                time = setTimeout(function () {
+
+                    // スクロール量
+                    const scroll = window.pageYOffset;
+                    console.log(scroll);  /* console.logを追加 */
+
+                    // 要素の位置までの数値
+                    const targetDistance = secGreen.getBoundingClientRect().top;
+                    console.log(targetDistance);  /* console.logを追加 */
+
+                    // 要素までの絶対位置
+                    const targetPosition = scroll + targetDistance - vh;
+
+                    // スクロール量がtargetPositionの位置を超えたら
+                    if (targetPosition < scroll) {
+                        pageTop.classList.add('fadeIn');
+                    } else {
+                        pageTop.classList.remove('fadeIn');
+                    }
+
+                }, speed); /* setTimeoutを閉じる */
+            }
+
+            // イベント付加
+            window.addEventListener('scroll', pageTopAction);
+        }
+    </script>
+    <style>
+       .fix-01 {
+            background: rgba(255, 255, 255, 0.8);
+            /背景を白色に/ box-shadow:0 2px 8px rgba(30,30,80,.3);
+            /影。不要なら削除/ left:0;
+            line-height: 1;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+    <style>
+        body{
+            background-color:#333333
+        }
+    </style>
+    <style>
+        h1 {
+            font-weight:100
+        }
+    </style>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+    <style>
+        h1 {
+            font-size: 60px;
+            font-family: 游ゴシック;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <style>
+        p {
+            color:white;
+            text-align: center;
+        }
+    </style>
+    <style>
+        a {
+            text-align: center;
+        }
+    </style>
+    <style>
+        div.instagram {
+            text-align: center;
+        }
+    </style>
+    <style>
+        div.photohito {
+            text-align: center;
+        }
+    </style>
+    <style>
+        .button019 a {
+            background: #eee;
+            border-radius: 3px;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 280px;
+            padding: 10px 25px;
+            color: #313131;
+            transition: 0.3s ease-in-out;
+            font-weight: 500;
+        }
+
+            .button019 a:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                bottom: 0;
+                right: 2rem;
+                font-size: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s;
+                width: 6px;
+                height: 6px;
+                border-top: solid 2px currentColor;
+                border-right: solid 2px currentColor;
+                transform: translateY(-50%) rotate(45deg);
+            }
+
+            .button019 a:hover {
+                background: #6bb6ff;
+                color: #FFF;
+            }
+
+                .button019 a:hover:after {
+                    right: 1.4rem;
+                }
+    </style>
+    <style>
+        .fix-01 {
+            font-family: 游ゴシック;
+        }
+    </style>
+    <style>
+        /** 1. 一般的なヘッダー */
+.header1 {
+ /* divを横並びにして、.header-logoと.header-menuを等間隔に左右に配置*/
+ display: flex;
+ justify-content: space-between;
+
+ background: #f3f0ea;
+ padding: 20px;
+ color: #707070;
+}
+
+.header1 .header-menu a {
+ text-decoration: none;
+ color: #707070;
+ padding: 20px;
+}
+.header1 .header-menu a:hover {
+ border-bottom: 2px solid #707070;
+ padding-bottom: 10px;
+}
+.header1 .header-menu a:hover,
+.header1 .header-menu a.active {
+ border-bottom: 2px solid #707070;
+ padding-bottom: 10px;
+}
+.header-logo {
+    font-size: 80px;
+}
+.header-menu {
+    font-size: 20px;
+}
+.img2 img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+    </style>
+</head>
+<body>
+    <div class="pagetop">
+        <a href="#" class="pagetop__link">
+            <span class="pagetop__text">TOP</span>
+        </a>
+    </div>
+    <div class="header1">
+        <div class="header-logo">Kazuta.b Photo Album</div>
+        <div class="header-menu">
+          <a href="index.html">TOP</a>
+          <a href="#">About</a>
+          <a href="gallery.html" class="active">Gallery</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+     
+       </div>
+     <h1>Gallery</h1>
+    <p>
+        ここは、今まで撮った写真の中の自信作を集めたところです。
+    </p>
+    <br>
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/6/7/67a7ee694a96467b3ec258d6fa15cf46/67a7ee694a96467b3ec258d6fa15cf46_l.jpg" style="display:block;margin:auto;">
+     <p>カメラのフラッシュをたいて撮った写真です。宮ケ瀬ダム湖畔園地で撮影しました。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/0/f/0ff7201fd6b89ce7410dc4e5131a9361/0ff7201fd6b89ce7410dc4e5131a9361_l.jpg" style="display:block;margin:auto;" />
+     <p>こちらも宮ケ瀬ダム湖畔園地で撮影した写真です。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/f/2/f28e542c7f8f177e1100c14268be76f4/f28e542c7f8f177e1100c14268be76f4_l.jpg" style="display:block;margin:auto;" />
+     <p>山梨県の昇仙峡の近くで撮影した写真。傑作です。Nikon DF+50mm f1.8G Special Edition</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/0/7/07d0bcbbbdd2dab949178882992563ce/07d0bcbbbdd2dab949178882992563ce_l.jpg" style="display:block;margin:auto;" />
+     <p>昭和記念公園で撮影した写真です。Nikon DF+50mm f1.8G Special Edition</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/c/0/c0d6a740d67204c51494dbc6ae270ddc/c0d6a740d67204c51494dbc6ae270ddc_l.jpg" style="display:block;margin:auto;" />
+     <p>こちらも昭和記念公園で撮影した写真です。オールドレンズで撮影したため、柔らかい描写になりました。Nikon DF+Carl Zeiss Planar</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/7/4/748db70526c8b890c43af3119d629de8/748db70526c8b890c43af3119d629de8_l.jpg" style="display:block;margin:auto;" />
+     <p>黒部ダムで撮影した写真です。この日はよく晴れていて、虹が出ていました。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/c/d/cd971dcfe628a0ed426863ff3199b92c/cd971dcfe628a0ed426863ff3199b92c_l.jpg" style="display:block;margin:auto;" />
+     <p>高松城で撮影した写真です。空の青と木の緑がきれいに水面に映りました。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/4/4/44702925f9c83b58c99dbb4f07b3a682/44702925f9c83b58c99dbb4f07b3a682_l.jpg" style="display:block;margin:auto;" />
+     <p>小豆島のエンジェルロードで撮影した写真。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/1/3/13586a30f6044f4e91579a68488605f4/13586a30f6044f4e91579a68488605f4_l.jpg" width="512" height="682" style="display:block;margin:auto;" />
+     <p>八王子駅付近で撮影した写真。2007年のカメラで撮影しましたが、そこそこうまく撮れました。OLYMPUS E-410</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/c/0/c011bbae10bdf8052e7d3c62ef52f710/c011bbae10bdf8052e7d3c62ef52f710_l.jpg" style="display:block;margin:auto;" />
+     <p>横浜で撮影した写真。フィルムシミュレーションをクラシッククロームにすることでクラシカルな印象にしました。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/8/6/86fa0e47f00d6e8d04f00fd09341890e/86fa0e47f00d6e8d04f00fd09341890e_l.jpg" style="display:block;margin:auto;" />
+     <p>こちらも横浜の赤レンガ倉庫で撮影した写真。みんなここでビールを飲んで盛り上がっていました。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/7/d/7da042af131b72916e1c43c8a7e4dd0a/7da042af131b72916e1c43c8a7e4dd0a_l.jpg" width="512" height="682" style="display:block;margin:auto;" />
+     <p>盛岡で撮影した写真。この時はちょうど雪が降っていて寒かったです。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/7/5/7592a555f7af23593eac5b70eba4564a/7592a555f7af23593eac5b70eba4564a_l.jpg" width="512" height="682" style="display:block;margin:auto;" />
+     <p>大磯ロングビーチの近くの大磯港で撮影した写真。自信作です。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/8/2/820171b8f3bb41367c05df4aa00d1183/820171b8f3bb41367c05df4aa00d1183_l.jpg" style="display:block;margin:auto;" />
+     <p>奥多摩の払沢の滝の近くで撮影した写真。奇妙な形の氷が落ちていたので撮影しました。NikonDF+f1.8G Special Edition</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/1/5/15b6cf383a816c45656d84c89bee7551/15b6cf383a816c45656d84c89bee7551_l.jpg" width="512" height="682" style="display:block;margin:auto;" />
+     <p>道の駅道志で撮影した写真。ピントを合わせるのが大変でした。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/4/3/434894af887251bb165a344db70b0f0f/434894af887251bb165a344db70b0f0f_l.jpg" style="display:block;margin:auto" />
+     <p>お台場海浜公園で撮影した写真。日没まで待って撮影しました。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/d/5/d5160011ee1770678da6edbfa765a548/d5160011ee1770678da6edbfa765a548_l.jpg" style="display:block;margin:auto" />
+     <p>こちらもお台場で撮影した写真。いい感じの色になりました。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/f/e/fecbfa799b5c3417201d377ee81ade72/fecbfa799b5c3417201d377ee81ade72_l.jpg" style="display:block;margin:auto" />
+     <p>京都の嵐山で撮影した写真。自信作です。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/6/1/6189a3716503b2ce40b31a216ee666a2/6189a3716503b2ce40b31a216ee666a2_l.jpg" style="display:block;margin:auto" />
+     <p>四日市港で撮影した写真。グレインエフェクトを使ってフィルムカメラで撮った写真のような見た目にしました。FUJIFILM x100f</p>
+     <br />
+     <img src="https://photohito.k-img.com/uploads/photo163/user162414/3/8/3861edbe732a5480bbfe65b619e1eb00/3861edbe732a5480bbfe65b619e1eb00_l.jpg" style="display:block;margin:auto" />
+     <p>こちらも四日市港で撮影した写真。空が紫色に写りました。FUJIFILM x100f</p>
+     <br />
+</body>
+  </html>
